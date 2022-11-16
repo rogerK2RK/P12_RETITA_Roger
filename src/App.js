@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import logo from './assets/images/LOGO.png';
+import yoga from './assets/icons/yoga.png';
+import natation from './assets/icons/natation.png';
+import velo from './assets/icons/velo.png';
+import musculation from './assets/icons/musculation.png';
+
 import './App.css';
+import ActiviteQuotidienne from './components/Activiter/index.js';
+
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img className="App-logo" src={logo} alt="logo" /> 
+        <a className="link-header" href="#">Accueil</a>
+        <a className="link-header" href="#">Profil</a>
+        <a className="link-header" href="#">Réglage</a>
+        <a className="link-header" href="#">Communauté</a>
       </header>
+      <nav className="App-nav">
+        <div className="bonx-nav">
+          <img className="icon-nav" src={yoga} alt="icon-yoga" /> 
+          <img className="icon-nav" src={natation} alt="icon-natation" /> 
+          <img className="icon-nav" src={velo} alt="icon-vélo" /> 
+          <img className="icon-nav" src={musculation} alt="icon-musculation" />
+        </div>
+        <p className="nav-link">Copiryght, SportSee 2020</p>
+      </nav>
+      <div className="App-content">
+        <div className='seconde-box'>
+          <h1>Bonjour <span>Thomas</span></h1>
+          <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+          <ActiviteQuotidienne />
+        </div>
+      </div>
     </div>
   );
 }
