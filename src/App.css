@@ -79,3 +79,19 @@
   margin: 159px 90px 86px 224px; 
   background-color: #FFFFFF;
 }
+
+.box-btm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dspl-flx {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.icone-nutri {
+  width: 60px;
+  height: 60px;
+}
+
