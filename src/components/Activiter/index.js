@@ -1,4 +1,4 @@
-import "./styles.css";
+import styles from "./styles.module.css"
 import React from "react";
 import {
   BarChart,
@@ -12,46 +12,39 @@ import {
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
+    "day":"2020-07-01",
+    "kilogram":70,
+    "calories":240
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
+    "day":"2020-07-02",
+    "kilogram":69,
+    "calories":220
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
+    "day":"2020-07-03",
+    "kilogram":70,
+    "calories":280
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
+    "day":"2020-07-04",
+    "kilogram":70,
+    "calories":500
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
+    "day":"2020-07-05",
+    "kilogram":69,
+    "calories":160
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
+    "day":"2020-07-06",
+    "kilogram":69,
+    "calories":162
   },
   {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
+    "day":"2020-07-07",
+    "kilogram":69,
+    "calories":390
   }
 ];
 
@@ -63,20 +56,23 @@ const data = [
       data={data}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 10,
+        left: 0,
         bottom: 5
       }}
+      className={styles["bkgrd"]}
     >
-      <CartesianGrid strokeDasharray="3 3" />
+      <CartesianGrid strokeDasharray="3 0" />
       <XAxis />
-      <YAxis />
+      <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+      <YAxis yAxisId="right" orientation="right" stroke="#8884d8" />
       <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-      <Bar dataKey="uv" fill="#82ca9d" />
+      <Legend verticalAlign="top"/>
+      <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" />
+      <Bar yAxisId="right" dataKey="calories" fill="#E60000" />
     </BarChart>
   );
 }
+
 
 export default Activiter;
