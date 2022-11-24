@@ -55,7 +55,7 @@ const data = [
       height={320}
       data={data}
       margin={{
-        top: 5,
+        top: 24,
         right: 10,
         left: 0,
         bottom: 5
@@ -67,8 +67,15 @@ const data = [
       <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
       <YAxis yAxisId="right" orientation="right" stroke="#8884d8" />
       <Tooltip />
-      <Legend verticalAlign="top"/>
-      <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" />
+      <Legend 
+        margin= {{
+          top: 0,
+          left: 0,
+          bottom: 10,
+          right: 10
+        }}
+        align="right" verticalAlign="top"/>
+      <Bar width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" />
       <Bar yAxisId="right" dataKey="calories" fill="#E60000" />
     </BarChart>
   );

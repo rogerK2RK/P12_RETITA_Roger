@@ -29,23 +29,24 @@ function App() {
           <img className="icon-nav" src={natation} alt="icon-natation" /> 
           <img className="icon-nav" src={velo} alt="icon-vélo" /> 
           <img className="icon-nav" src={musculation} alt="icon-musculation" />
+          <p className="nav-link">Copiryght, SportSee 2020</p>
         </div>
-        <p className="nav-link">Copiryght, SportSee 2020</p>
+        
       </nav>
       <div className="App-content">
         <div className='seconde-box'>
           <h1>Bonjour <span>Thomas</span></h1>
           <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           <div className='dspl-flx'>
-            <div>
-              <ActiviteQuotidienne />
+            <div class="box-lft">
+              <ActiviteQuotidienne  class="wdth-act-box" />
               <div className='box-btm'>
                 <Sessions />
                 <Performance />
                 <Score />
               </div>
             </div>
-            <div>
+            <div class="box-rght">
               <Nutriment/>
             </div>
           </div>
