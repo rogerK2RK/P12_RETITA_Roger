@@ -72,7 +72,7 @@
   height: 100%;
   /* left: 117px;
   top: 91px; */
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .seconde-box {
@@ -90,8 +90,5 @@
   /* justify-content: space-between; */
 }
 
-.icone-nutri {
-  width: 60px;
-  height: 60px;
-}
+
 

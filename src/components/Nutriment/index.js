@@ -1,6 +1,9 @@
 import React from 'react';
-
-import Calorie from '../../assets/icons/calories-icon.png';
+import styles from "./styles.module.css"
+import Calories from '../../assets/icons/calories-icon.png';
+import Proteines from '../../assets/icons/protein-icon.png';
+import Glucides from '../../assets/icons/carbs-icon.png';
+import Lipides from '../../assets/icons/fat-icon.png';
 
 const data = {
     "id":18,
@@ -19,9 +22,27 @@ const data = {
 
 function Nutriment(){
     return(
-        <div>
-            <div className='dspl-flx'>
-                <img className='icone-nutri' src={Calorie} alt={data.keyData.calorieCount}/>
+        <div className={styles["box-global"]}>
+            <div className={styles["box-nutri"]}>
+                <img className={styles["icone-nutri"]} src={Calories} alt={data.keyData.calorieCount}/>
+                <div>
+                    <h5>{data.keyData.calorieCount}kCal</h5>
+                </div>
+            </div>
+            <div className={styles["box-nutri"]}>
+                <img className={styles["icone-nutri"]} src={Proteines} alt={data.keyData.proteinCount}/>
+                <div>
+                    <h5>{data.keyData.calorieCount}kCal</h5>
+                </div>
+            </div>
+            <div className={styles["box-nutri"]}>
+                <img className={styles["icone-nutri"]} src={Glucides} alt={data.keyData.carbohydrateCount}/>
+                <div>
+                    <h5>{data.keyData.calorieCount}kCal</h5>
+                </div>
+            </div>
+            <div className={styles["box-nutri"]}>
+                <img className={styles["icone-nutri"]} src={Lipides} alt={data.keyData.lipidCount}/>
                 <div>
                     <h5>{data.keyData.calorieCount}kCal</h5>
                 </div>

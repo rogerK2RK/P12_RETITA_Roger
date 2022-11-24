@@ -1,0 +1,20 @@
+.box-nutri {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 39px;
+    padding: 32px 0px;
+    width: 258px;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+}
+
+.icone-nutri {
+    width: 60px;
+    height: 60px;
+    margin-right: 24px;
+}
+
+.box-global {
+    margin-left: 331px;
+}
