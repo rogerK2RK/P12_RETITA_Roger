@@ -15,6 +15,7 @@ export default function App() {
     <PieChart width={258} height={263} className={styles["bkgrnd"]}>
       
       <Pie
+        cornerRadius={20}
         data={tem1}
         dataKey="value"
         cx={129}
