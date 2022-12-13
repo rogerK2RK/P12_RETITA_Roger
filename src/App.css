@@ -16,6 +16,7 @@
   justify-content: space-around;
   align-items: center;
   position: absolute;
+  top: 0;
   z-index: 100;
   width: 100%;
 }

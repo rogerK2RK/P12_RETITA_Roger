@@ -5,14 +5,11 @@ import velo from './assets/icons/velo.png';
 import musculation from './assets/icons/musculation.png';
 
 import './App.css';
-import ActiviteQuotidienne from './components/Activiter/index.js';
-import Sessions from './components/Session/index.js';
-import Performance from './components/Performance/index.js';
-import Score from './components/Score/index.js';
-import Nutriment from './components/Nutriment/index.js';
-
+import Home from "./pages/Home/index.jsx"
+import User from "./pages/User/index.jsx"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { useState, useEffect } from "react"
-import getAverageSessions from './components/fetch';
+import {getAverageSessions, getAverageUsers} from './components/fetch';
 
 // const dataSession = [
 //   {
@@ -43,18 +40,25 @@ import getAverageSessions from './components/fetch';
 // ];
 
 function App() {
-  // let url = 'http://localhost:3000/user/18/average-sessions';
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    getAverageUsers().then((user) => {
+      setUsers(user)
+    })
+  }, [])
+
   const [sessions, setSessions] = useState([])
 
   useEffect(() => {
     getAverageSessions().then((session) => {
-      console.log(session)
       setSessions(session)
     })
   }, [])
 
   return (
-    <div className="">
+    <React.StrictMode>
+      <Router>
       <header className="App-header">
         <img className="App-logo" src={logo} alt="logo" /> 
         <a className="link-header" href="/">Accueil</a>
@@ -72,26 +76,15 @@ function App() {
         </div>
         
       </nav>
-      <div className="App-content">
-        <div className='seconde-box'>
-          <h1>Bonjour <span>Thomas</span></h1>
-          <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-          <div className='dspl-flx'>
-            <div className="box-lft">
-              <ActiviteQuotidienne  className="wdth-act-box" />
-              <div className='box-btm'>
-                <Sessions data={sessions} />
-                <Performance />
-                <Score />
-              </div>
-            </div>
-            <div className="box-rght">
-              <Nutriment/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home logements={users} />} />
+        <Route
+              path="/user/:id"
+              element={<User logements={sessions} />}
+            />
+      </Routes>
+    </Router>
+    </React.StrictMode>
   );
 }
 
