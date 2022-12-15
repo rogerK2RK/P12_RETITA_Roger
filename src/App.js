@@ -7,6 +7,7 @@ import musculation from './assets/icons/musculation.png';
 import './App.css';
 import Home from "./pages/Home/index.jsx"
 import User from "./pages/User/index.jsx"
+import ErrorPage from "./pages/Erreur/index.jsx"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { useState, useEffect } from "react"
 import {getAverageSessions, getAverageUsers} from './components/fetch';
@@ -63,8 +64,8 @@ function App() {
         <img className="App-logo" src={logo} alt="logo" /> 
         <a className="link-header" href="/">Accueil</a>
         <a className="link-header" href="/">Profil</a>
-        <a className="link-header" href="/">Réglage</a>
-        <a className="link-header" href="/">Communauté</a>
+        <a className="link-header" href="*">Réglage</a>
+        <a className="link-header" href="*">Communauté</a>
       </header>
       <nav className="App-nav">
         <div className="bonx-nav">
@@ -77,11 +78,12 @@ function App() {
         
       </nav>
       <Routes>
-        <Route path="/" element={<Home logements={users} />} />
+        <Route path="/" element={<Home userdata={users} />} />
         <Route
               path="/user/:id"
-              element={<User logements={sessions} />}
+              element={<User userdata={sessions} />}
             />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
     </React.StrictMode>

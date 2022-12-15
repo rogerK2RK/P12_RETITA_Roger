@@ -5,46 +5,31 @@ import Proteines from '../../assets/icons/protein-icon.png';
 import Glucides from '../../assets/icons/carbs-icon.png';
 import Lipides from '../../assets/icons/fat-icon.png';
 
-const data = {
-    "id":18,
-    "userInfos":{
-        "firstName":"Cecilia",
-        "lastName":"Ratorez",
-        "age":34},
-        "score":0.3,
-        "keyData":{
-            "calorieCount":2500,
-            "proteinCount":90,
-            "carbohydrateCount":150,
-            "lipidCount":120
-        }
-    };
-
-function Nutriment(){
+function Nutriment(props){
     return(
         <div className={styles["box-global"]}>
             <div className={styles["box-nutri"]}>
-                <img className={styles["icone-nutri"]} src={Calories} alt={data.keyData.calorieCount}/>
+                <img className={styles["icone-nutri"]} src={Calories} alt={props.data.calorieCount}/>
                 <div>
-                    <h5>{data.keyData.calorieCount}kCal</h5>
+                    <h5>{props.data.calorieCount}kCal</h5>
                 </div>
             </div>
             <div className={styles["box-nutri"]}>
-                <img className={styles["icone-nutri"]} src={Proteines} alt={data.keyData.proteinCount}/>
+                <img className={styles["icone-nutri"]} src={Proteines} alt={props.data.proteinCount}/>
                 <div>
-                    <h5>{data.keyData.calorieCount}kCal</h5>
+                    <h5>{props.data.proteinCount}kCal</h5>
                 </div>
             </div>
             <div className={styles["box-nutri"]}>
-                <img className={styles["icone-nutri"]} src={Glucides} alt={data.keyData.carbohydrateCount}/>
+                <img className={styles["icone-nutri"]} src={Glucides} alt={props.data.carbohydrateCount}/>
                 <div>
-                    <h5>{data.keyData.calorieCount}kCal</h5>
+                    <h5>{props.data.carbohydrateCount}kCal</h5>
                 </div>
             </div>
             <div className={styles["box-nutri"]}>
-                <img className={styles["icone-nutri"]} src={Lipides} alt={data.keyData.lipidCount}/>
+                <img className={styles["icone-nutri"]} src={Lipides} alt={props.data.lipidCount}/>
                 <div>
-                    <h5>{data.keyData.calorieCount}kCal</h5>
+                    <h5>{props.data.lipidCount}kCal</h5>
                 </div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+.Users-box {
+    margin: 159px 90px 86px 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+    width: 50%;
+}
+
+.one-users{
+    color:#020203;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 15px 40px 10px 40px;
+    border-radius: 15px;
+    border: 2px solid #e6e6e6;
+}
+.one-users:hover{
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+}

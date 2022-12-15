@@ -6,9 +6,33 @@ function callApi(url){
 
 }
 
+export function getAverageActiviter(userId){
+    return callApi(`http://localhost:3000/user/${userId}/activity`).then((data)=>{
+        return data.data.sessions;
+    })
+}
+
 export function getAverageSessions(userId){
     return callApi(`http://localhost:3000/user/${userId}/average-sessions`).then((data)=>{
         return data.data.sessions;
+    })
+}
+
+export function getAveragePerformance(userId){
+    return callApi(`http://localhost:3000/user/${userId}/performance`).then((data)=>{
+        return data.data;
+    })
+}
+
+export function getAverageScore(userId){
+    return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
+        return data.data;
+    })
+}
+
+export function getAverageNutriment(userId){
+    return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
+        return data.data.keyData;
     })
 }
 
@@ -18,4 +42,3 @@ export function getAverageUsers(){
     })
 }
 
-// export default getAverageSessions;

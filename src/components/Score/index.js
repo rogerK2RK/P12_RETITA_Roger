@@ -2,15 +2,24 @@ import styles from "./styles.module.css"
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 
-const tem1 = [{
-  value:30
-},{
-  value:70
-}];
 
-const COLORS = ["#E60000", "#fff",];
 
-export default function App() {
+export default function App(props) {
+  let score;
+
+  if(props.data.id === 12){
+    score = props.data.todayScore;
+  } else if(props.data.id === 18){
+    score = props.data.score;
+  }
+
+  const tem1 = [{
+    value:score*100
+  },{
+    value:100-(score*100)
+  }];
+  
+  const COLORS = ["#E60000", "#fff",];
   return (
     <PieChart width={258} height={263} className={styles["bkgrnd"]}>
       

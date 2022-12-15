@@ -45,12 +45,24 @@ const data = [
 ];
 
 const data02 = data.map((obj) => {
-    return {
-      ...obj, categorie:kinds[obj.kind]
-    };
-  });
+  return {
+    ...obj, categorie:kinds[obj.kind]
+  };
+});
 
-export default function App() {
+export default function App(props) {
+
+  // console.log(props.data.kind)
+  // let kinds = props.data.kind;
+  // let data01 = props.data.data;
+  // console.log(kinds)
+
+  // const data02 = data01.map((obj) => {
+  //   return {
+  //     ...obj, categorie:kinds[obj.kind]
+  //   };
+  // });
+
   return (
     <RadarChart
         cx={129}
