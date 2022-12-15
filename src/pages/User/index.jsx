@@ -6,7 +6,7 @@ import Score from '../../components/Score/index.js';
 import Nutriment from '../../components/Nutriment/index.js';
 
 import React, { useState, useEffect } from "react"
-import {getAverageActiviter, getAverageSessions, getAveragePerformance, getAverageScore, getAverageNutriment} from '../../components/fetch';
+import {getAverageActiviter, getAverageSessions, getAveragePerformance, getAverageScore, getAverageNutriment, getAverageName} from '../../components/fetch';
 import { useParams } from 'react-router-dom';
 
 
@@ -18,6 +18,7 @@ function User() {
   const [performance, setPerformance] = useState([]);
   const [score, setScore] = useState([]);
   const [nutriment, setNutriment] = useState([]);
+  const [name, setName] = useState([]);
 
   const { id:userId } = useParams()
 
@@ -44,7 +45,11 @@ function User() {
       setNutriment(nutriment)
     });
 
-    Promise.all([callActiviter, callSession, callPerformance, callScore, callNutriment]).then(() => {
+    const callName = getAverageName(userId).then((name) => {
+      setName(name)
+    });
+
+    Promise.all([callActiviter, callSession, callPerformance, callScore, callNutriment, callName]).then(() => {
       setIsLoading(false);
     });
 
@@ -54,7 +59,7 @@ function User() {
     <div className="">
       <div className="App-content">
         <div className='seconde-box'>
-          <h1>Bonjour <span>Thomas</span></h1>
+          <h1>Bonjour <span>{name}</span></h1>
           <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           <div className='dspl-flx'>
             <div className="box-lft">

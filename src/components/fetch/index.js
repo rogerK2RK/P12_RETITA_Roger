@@ -35,6 +35,12 @@ export function getAverageNutriment(userId){
     })
 }
 
+export function getAverageName(userId){
+    return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
+        return data.data.userInfos.firstName;
+    })
+}
+
 export function getAverageUsers(){
     return callApi('http://localhost:3000/user').then((data)=>{
         return data.data.sessions;
