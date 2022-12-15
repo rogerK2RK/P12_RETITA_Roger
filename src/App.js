@@ -61,9 +61,10 @@ function App() {
     <React.StrictMode>
       <Router>
       <header className="App-header">
-        <img className="App-logo" src={logo} alt="logo" /> 
+        
+        <a href="/"><img className="App-logo" src={logo} alt="logo" /></a>
         <a className="link-header" href="/">Accueil</a>
-        <a className="link-header" href="/">Profil</a>
+        <a className="link-header" href="*">Profil</a>
         <a className="link-header" href="*">Réglage</a>
         <a className="link-header" href="*">Communauté</a>
       </header>

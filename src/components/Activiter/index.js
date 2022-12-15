@@ -37,8 +37,8 @@ import {
           right: 10
         }}
         align="right" verticalAlign="top"/>
-      <Bar width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" />
-      <Bar yAxisId="right" dataKey="calories" fill="#E60000" />
+      <Bar barSize={7} width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} />
+      <Bar barSize={7} yAxisId="right" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]}/>
     </BarChart>
   );
 }
