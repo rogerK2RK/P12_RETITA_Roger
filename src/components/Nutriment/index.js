@@ -17,19 +17,19 @@ function Nutriment(props){
             <div className={styles["box-nutri"]}>
                 <img className={styles["icone-nutri"]} src={Proteines} alt={props.data.proteinCount}/>
                 <div>
-                    <h5>{props.data.proteinCount}kCal</h5>
+                    <h5>{props.data.proteinCount}g</h5>
                 </div>
             </div>
             <div className={styles["box-nutri"]}>
                 <img className={styles["icone-nutri"]} src={Glucides} alt={props.data.carbohydrateCount}/>
                 <div>
-                    <h5>{props.data.carbohydrateCount}kCal</h5>
+                    <h5>{props.data.carbohydrateCount}g</h5>
                 </div>
             </div>
             <div className={styles["box-nutri"]}>
                 <img className={styles["icone-nutri"]} src={Lipides} alt={props.data.lipidCount}/>
                 <div>
-                    <h5>{props.data.lipidCount}kCal</h5>
+                    <h5>{props.data.lipidCount}g</h5>
                 </div>
             </div>
         </div>
