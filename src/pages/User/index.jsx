@@ -15,7 +15,7 @@ function User() {
   const [isLoading, setIsLoading] = useState(false);
   const [activiter, setActiviter] = useState([]);
   const [sessions, setSessions] = useState([])
-  const [performance, setPerformance] = useState([]);
+  const [performance, setPerformance] = useState({kind:[], data:[]});
   const [score, setScore] = useState([]);
   const [nutriment, setNutriment] = useState([]);
   const [name, setName] = useState([]);
