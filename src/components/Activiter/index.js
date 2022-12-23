@@ -24,11 +24,11 @@ import {
       }}
       className={styles["bkgrd"]}
     >
-      <CartesianGrid strokeDasharray="3 0" />
-      <XAxis />
-      <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-      <YAxis yAxisId="right" orientation="right" stroke="#8884d8" />
-      <Tooltip />
+      {/* <CartesianGrid strokeDasharray="3 0" /> */}
+      <XAxis label={{fill:'##9B9EAC' }}/>
+      {/* <YAxis yAxisId="left" orientation="left" stroke="#8884d8" /> */}
+      <YAxis tick={{ fill: 'red' }} tickLine={{ stroke: 'red' }} yAxisId="right" orientation="right" />
+      {/* <Tooltip /> */}
       <Legend 
         margin= {{
           top: 0,
@@ -37,6 +37,7 @@ import {
           right: 10
         }}
         align="right" verticalAlign="top"/>
+      <CartesianGrid vertical={0} strokeDasharray="2 " />
       <Bar barSize={7} width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} />
       <Bar barSize={7} yAxisId="right" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]}/>
     </BarChart>
