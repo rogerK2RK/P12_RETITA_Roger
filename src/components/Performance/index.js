@@ -53,11 +53,7 @@ import {
 export default function Performance(props) {
   // props.data = []
 
-  // props.data = {
-  //  kind:
-  //  data:
-  //}
-  // props.data.kind
+  // console.log(props.data.kind)
   let kinds = props.data.kind;
   let data01 = props.data.data;
   console.log(kinds)
