@@ -7,6 +7,7 @@ import Nutriment from '../../components/Nutriment/index.js';
 
 import React, { useState, useEffect } from "react"
 import {getAverageActiviter, getAverageSessions, getAveragePerformance, getAverageScore, getAverageNutriment, getAverageName} from '../../components/fetch';
+import {getAverageName as getAverageNameMock} from "../../components/fetch/mock.js"
 import { useParams } from 'react-router-dom';
 
 
@@ -15,7 +16,7 @@ function User() {
   const [isLoading, setIsLoading] = useState(false);
   const [activiter, setActiviter] = useState([]);
   const [sessions, setSessions] = useState([])
-  const [performance, setPerformance] = useState([]);
+  const [performance, setPerformance] = useState({kind:[], data:[]});
   const [score, setScore] = useState([]);
   const [nutriment, setNutriment] = useState([]);
   const [name, setName] = useState([]);
@@ -45,7 +46,7 @@ function User() {
       setNutriment(nutriment)
     });
 
-    const callName = getAverageName(userId).then((name) => {
+    const callName = getAverageNameMock(userId).then((name) => {
       setName(name)
     });
 
