@@ -50,7 +50,8 @@ import {
 //   };
 // });
 
-export default function App(props) {
+export default function Performance(props) {
+  // props.data = []
 
   // console.log(props.data.kind)
   let kinds = props.data.kind;
