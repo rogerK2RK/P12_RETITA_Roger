@@ -25,18 +25,18 @@ import {
       className={styles["bkgrd"]}
     >
       {/* <CartesianGrid strokeDasharray="3 0" /> */}
-      <XAxis label={{fill:'##9B9EAC' }}/>
+      <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} tickLine={{ stroke: 'none' }}/>
       {/* <YAxis yAxisId="left" orientation="left" stroke="#8884d8" /> */}
-      <YAxis tick={{ fill: 'red' }} tickLine={{ stroke: 'red' }} yAxisId="right" orientation="right" />
+      <YAxis tick={{ fill: '#9B9EAC' }} stroke="none" tickLine={{ stroke: 'none' }} yAxisId="right" orientation="right" />
       {/* <Tooltip /> */}
-      <Legend 
+      <Legend
         margin= {{
           top: 0,
           left: 0,
           bottom: 10,
           right: 10
         }}
-        align="right" verticalAlign="top"/>
+        align="right" verticalAlign="top" iconType="circle" />
       <CartesianGrid vertical={0} strokeDasharray="2 " />
       <Bar barSize={7} width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} />
       <Bar barSize={7} yAxisId="right" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]}/>

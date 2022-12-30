@@ -76,7 +76,7 @@ export default function Performance(props) {
     >
       <PolarGrid />
       <PolarAngleAxis dataKey="categorie" />
-      <PolarRadiusAxis />
+      <PolarRadiusAxis hide tick={{ fill: 'none' }} stroke="none" tickCount={5} tickLine={{ stroke: 'none' }} />
       <Radar
         name="Mike"
         dataKey="value"

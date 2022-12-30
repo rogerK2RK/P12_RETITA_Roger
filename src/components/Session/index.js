@@ -20,11 +20,11 @@ export default function Session(props) {
       data={props.data}
       className={styles["bkgrd-session"]}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="day" />
+      <CartesianGrid vertical={0} horizontal={0} />
+      <XAxis dataKey="day" tick={{ fill: '#fff' }} stroke="none" tickLine={{ stroke: 'none' }}/>
       <YAxis hide/>
       <Tooltip />
-      <Area type="monotone" dataKey="sessionLength" stroke="#000" fill="#FF0000" />
+      <Area type="monotone" dataKey="sessionLength" stroke="#fff" fill="#FF0000" />
     </AreaChart>
   );
 }
