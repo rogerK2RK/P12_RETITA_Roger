@@ -6,11 +6,17 @@ import Score from '../../components/Score/index.js';
 import Nutriment from '../../components/Nutriment/index.js';
 
 import React, { useState, useEffect } from "react"
-import {getAverageActiviter, getAverageSessions, getAveragePerformance, getAverageScore, getAverageNutriment, getAverageName} from '../../components/fetch';
-import {getAverageName as getAverageNameMock} from "../../components/fetch/mock.js"
+import {getAverageActiviter as getAverageActiviterFetch, getAverageSessions as getAverageSessionsFetch, getAveragePerformance as getAveragePerformanceFetch, getAverageScore, getAverageNutriment as getAverageNutrimentFetch, getAverageName as getAverageNameFetch} from '../../components/fetch';
+import {getAverageName as getAverageNameMock, getAverageNutriment as getAverageNutrimentMock, getAveragePerformance as getAveragePerformanceMock, getAverageSessions as getAverageSessionsMock, getAverageActiviter as getAverageActiviterMock} from "../../components/fetch/mock.js"
 import { useParams } from 'react-router-dom';
 
+// const isMockActive = false;
 
+const getAverageNutriment = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageNutrimentMock : getAverageNutrimentFetch;
+const getAverageName = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageNameMock : getAverageNameFetch;
+const getAveragePerformance = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAveragePerformanceMock : getAveragePerformanceFetch;
+const getAverageSessions = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageSessionsMock : getAverageSessionsFetch;
+const getAverageActiviter = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageActiviterMock : getAverageActiviterFetch;
 
 function User() {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +52,7 @@ function User() {
       setNutriment(nutriment)
     });
 
-    const callName = getAverageNameMock(userId).then((name) => {
+    const callName = getAverageName(userId).then((name) => {
       setName(name)
     });
 
