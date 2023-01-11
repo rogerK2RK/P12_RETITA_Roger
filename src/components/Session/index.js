@@ -1,12 +1,15 @@
+
 import styles from "./styles.module.css"
 import React from "react";
 import PropTypes from 'prop-types';
+
 import {
-  AreaChart,
+  LineChart,
   Area,
   XAxis,
   YAxis,
   CartesianGrid,
+  Line,
   Tooltip
 } from "recharts";
 
@@ -27,24 +30,62 @@ function formatXAxis(value){
     case 7:
       return "D";
   }
-  // return "n";
 }
 
+function CustomizedDot(props){
+  return <svg>
+          <circle cx={props.cx} cy={props.cy} r={3} fill="white" opacity={1} />
+          <circle cx={props.cx} cy={props.cy} r={6} fill="white" opacity={0.3} />
+          <rect x={props.cx} y={0} width="100%" height="100%" opacity={0.1}/>
+        </svg>
+} 
+
 export default function Session(props) {
+
   return (
-    <AreaChart
-      width={258}
-      height={263}
-      data={props.data}
-      className={styles["bkgrd-session"]}
-    >
-      <CartesianGrid vertical={0} horizontal={0} />
-      <XAxis dataKey="day" tick={{ fill: '#fff' }} stroke="none" tickLine={{ stroke: 'none' }} tickFormatter={formatXAxis}/>
-      <YAxis hide/>
-      <Tooltip />
-      {/* <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" /> */}
-      <Area type="monotone" dataKey="sessionLength" stroke="#fff" fill="#FF0000" />
-    </AreaChart>
+      <LineChart 
+            width={258}
+            height={263}
+            data={props.data}
+            className={styles["bkgrd-session"]}
+            isAnimationActive={true}
+          >
+            <CartesianGrid vertical={0} horizontal={0} />
+            <XAxis dataKey="day" tick={{ fill: '#fff' }} stroke="none" tickLine={{ stroke: 'none' }} tickFormatter={formatXAxis}/>
+            <YAxis hide/>
+            <Line type="monotone" 
+                  dataKey="sessionLength" 
+                  dot={false} 
+                  activeDot={<CustomizedDot />} 
+                  strokeWidth={2}
+                  unit="min"
+                  radius={[10, 10, 0, 0]}/>
+            <Tooltip offset={10}
+                  contentStyle={{
+                    backgroundColor: '#fff',
+                    border: 'none',
+                    textAlign: 'center',
+                  }}
+                  wrapperStyle={{
+                    outline: 'none',
+                  }}
+                  itemStyle={{
+                    fontSize: '8px',
+                    fontWeight: '500',
+                    color: '#000',
+                    lineHeight: '0',
+                  }}
+                  labelFormatter={() => ''}
+                  separator=""
+                  formatter={(value) => ['', value]}/>
+            <Area
+              type="monotone"
+              dataKey="sessionLength"
+              stroke="#FFF"
+              fill="#fff"
+              tickLine="#FFF"
+            />
+    </LineChart >
   );
 }
 
