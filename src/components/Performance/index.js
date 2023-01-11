@@ -5,7 +5,8 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis
+  PolarRadiusAxis,
+  ResponsiveContainer
 } from "recharts";
 
 
@@ -22,25 +23,32 @@ export default function Performance(props) {
   });
 
   return (
-    <RadarChart
-        cx={129}
-        cy={131}
-        outerRadius={79}
-        width={258}
-        height={263}
-        data={data02}
-        className={styles["bkgrd"]}
-    >
-      <PolarGrid />
-      <PolarAngleAxis dataKey="categorie"  />
-      <PolarRadiusAxis hide tick={{ fill: 'none' }} stroke="none" tickCount={5} tickLine={{ stroke: 'none' }} />
-      <Radar
-        name="Mike"
-        dataKey="value"
-        stroke="##FF0000"
-        fill="#FF0000"
-        fillOpacity={0.6}
-      />
-    </RadarChart>
+    <ResponsiveContainer width={270}height={263} className={styles["radar-performance"]}>
+      {/* <h3>Salut</h3> */}
+      <RadarChart
+          startAngle={-150}
+          endAngle={210}
+          margin={{ top: 5, right: 35, bottom: 5, left: 35 }}
+          cx={129}
+          cy={131}
+          outerRadius={79}
+          width={258}
+          height={263}
+          data={data02}
+          className={styles["bkgrd"]}
+      >
+        <PolarGrid polarRadius={[10, 20, 40, 60, 80]} radialLines={false} />
+        <PolarAngleAxis orient="inner" dataKey="categorie" tickLine={false} />
+        <PolarRadiusAxis hide tick={{ fill: 'none' }} stroke="none" tickCount={5} tickLine={{ stroke: 'none' }} axisLine={false} />
+        <Radar
+          name="Mike"
+          dataKey="value"
+          stroke="#FF0000"
+          fill="#FF0000"
+          fillOpacity={0.7}
+        />
+      </RadarChart>
+    </ResponsiveContainer>
+    
   );
 }

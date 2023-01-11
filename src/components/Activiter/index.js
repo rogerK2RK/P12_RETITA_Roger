@@ -13,7 +13,7 @@ import {
  function Activiter(props) {
   return (
     <BarChart
-      width={835}
+      width={1035}
       height={320}
       data={props.data}
       margin={{
@@ -35,6 +35,7 @@ import {
           orientation="right"
           yAxisId="right"
           domain={['dataMin - 2', 'dataMax + 5']}
+          // tick={{ stroke: 'none' }}
         />
         <YAxis
           dataKey="calories"
