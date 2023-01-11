@@ -23,12 +23,49 @@ import {
         bottom: 5
       }}
       className={styles["bkgrd"]}
+      barGap={8}
     >
-      {/* <CartesianGrid strokeDasharray="3 0" /> */}
-      <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} tickLine={{ stroke: 'none' }}/>
-      {/* <YAxis yAxisId="left" orientation="left" stroke="#8884d8" /> */}
-      <YAxis tick={{ fill: '#9B9EAC' }} stroke="none" tickLine={{ stroke: 'none' }} yAxisId="right" orientation="right" />
-      {/* <Tooltip /> */}
+      <CartesianGrid vertical={0} strokeDasharray="3 3" />
+      {/* <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} tickLine={{ stroke: 'none' }}/> */}
+      <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} type="category"  tickLine={false} />
+      <YAxis
+          dataKey="kilogram"
+          tickLine={false}
+          tickCount={3}
+          orientation="right"
+          yAxisId="right"
+          domain={['dataMin - 2', 'dataMax + 5']}
+        />
+        <YAxis
+          dataKey="calories"
+          tickLine={false}
+          tickCount={3}
+          orientation="left"
+          yAxisId="left"
+          domain={['dataMin - 100', 'dataMax + 20']}
+          hide
+        />
+        <Tooltip
+						cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
+						offset={20}
+						contentStyle={{
+							backgroundColor: '#E60000',
+							border: 'none',
+							textAlign: 'center',
+						}}
+						wrapperStyle={{
+							outline: 'none',
+						}}
+						itemStyle={{
+							fontSize: '12px',
+							color: '#fff',
+							lineHeight: '24px',
+						}}
+						labelFormatter={() => ''}
+						separator=""
+						formatter={(value) => ['', value]}
+						active="true"
+					/>
       <Legend
         margin= {{
           top: 0,
@@ -36,10 +73,30 @@ import {
           bottom: 10,
           right: 10
         }}
-        align="right" verticalAlign="top" iconType="circle" />
-      <CartesianGrid vertical={0} strokeDasharray="2 " />
-      <Bar barSize={7} width="7px" yAxisId="right" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} />
-      <Bar barSize={7} yAxisId="right" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]}/>
+        align="right" 
+        height={50}
+        verticalAlign="top" 
+        iconType="circle"
+         />
+      <Bar 
+        barSize={7} 
+        name="Poids (kg)" 
+        unit="kg" 
+        width="7px" 
+        yAxisId="right" 
+        dataKey="kilogram" 
+        fill="#000"
+        // fill="#282D30" 
+        radius={[3, 3, 0, 0]} 
+      />
+      <Bar 
+        barSize={7} 
+        name="Calories brûlées (kCal)"
+        unit="kCal"
+        yAxisId="right" 
+        dataKey="calories" 
+        fill="#E60000" 
+        radius={[3, 3, 0, 0]}/>
     </BarChart>
   );
 }
