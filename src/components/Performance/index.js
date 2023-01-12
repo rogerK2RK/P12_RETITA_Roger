@@ -22,6 +22,15 @@ export default function Performance(props) {
     };
   });
 
+  const kindTitle = {
+    cardio: "Cardio",
+    energy: "Energie",
+    endurance: "Endurance",
+    strength: "Force",
+    speed: "Vitesse",
+    intensity: "Intensité",
+  };
+
   return (
     <ResponsiveContainer width={270}height={263} className={styles["radar-performance"]}>
       {/* <h3>Salut</h3> */}

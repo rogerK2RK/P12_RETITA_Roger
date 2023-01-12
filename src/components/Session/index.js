@@ -46,7 +46,7 @@ const Background = styled.div`
     font-size: 15px;
     line-height: 24px;
     position: absolute;
-    left: 34px;
+    left: 20px;
     top: 0px;
     max-width: 150px;
     z-index: 2;
@@ -54,16 +54,18 @@ const Background = styled.div`
   .recharts-wrapper {
     width: 100%;
   }
+  .recharts-line{
+    color: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.106534) 100%);
+    // opacity: 0.1;
+  }
   .recharts-rectangle {
     transform: translateY(-5px);
     z-index: -1;
     opacity: 0.1;
   }
-  .recharts-surface {
-    transform: scale(1.1);
-  }
   .xAxis {
-    transform: translateY(-10px);
+    transform: translateY(5px);
+    opacity: 0.5;
   }
 `;
 
@@ -92,7 +94,7 @@ function CustomizedDot(props){
   return <svg>
           <circle cx={props.cx} cy={props.cy} r={3} fill="white" opacity={1} />
           <circle cx={props.cx} cy={props.cy} r={6} fill="white" opacity={0.3} />
-          <rect x={props.cx} y={0} width="100%" height="100%" opacity={0.1}/>
+          <rect x={props.cx} y={0} width="100%" height="100%" tickLine={0} opacity={0.1}/>
         </svg>
 } 
 
@@ -104,45 +106,69 @@ export default function Session(props) {
           <ResponsiveContainer width={270}height={263}>
               <LineChart 
                     width={258}
-                    height={263}
+                    height={253}
                     data={props.data}
                     className={styles["bkgrd-session"]}
                     isAnimationActive={true}
                   >
-                    <CartesianGrid vertical={0} horizontal={0} />
-                    <XAxis dataKey="day" tick={{ fill: '#fff' }} stroke="none" tickLine={{ stroke: 'none' }} tickFormatter={formatXAxis}/>
-                    <YAxis hide/>
-                    <Line type="monotone" 
-                          dataKey="sessionLength" 
-                          dot={false} 
-                          activeDot={<CustomizedDot />} 
-                          strokeWidth={2}
-                          unit="min"
-                          radius={[10, 10, 0, 0]}/>
-                    <Tooltip offset={10}
-                          contentStyle={{
-                            backgroundColor: '#fff',
-                            border: 'none',
-                            textAlign: 'center',
-                          }}
-                          wrapperStyle={{
-                            outline: 'none',
-                          }}
-                          itemStyle={{
-                            fontSize: '12px',
-                            fontWeight: '500',
-                            color: '#000',
-                            lineHeight: '0',
-                          }}
-                          labelFormatter={() => ''}
-                          separator=""
-                          formatter={(value) => ['', value]}/>
+                    <CartesianGrid 
+                      vertical={0} 
+                      horizontal={0} 
+                    />
+                    <XAxis 
+                      dataKey="day" 
+                      tick={{ fill: '#fff' }} 
+                      stroke="none" 
+                      tickLine={{ stroke: 'none' }} 
+                      tickFormatter={formatXAxis}
+                      padding={{ left: 15, right: 30 }}
+                      axisLine={false}
+                      tickSize={0}
+                      tickMargin={0}
+                    />
+                    <YAxis 
+                      hide
+                      type="number"
+                      domain={[(dataMin) => dataMin - 10, (dataMax) => dataMax + 10]}
+                    />
+                    <Line 
+                      type="natural"
+                      stroke="#fbfbfb"
+                      // dot={{ r: 0 }}
+                      // type="monotone" 
+                      dataKey="sessionLength" 
+                      dot={false} 
+                      activeDot={<CustomizedDot />} 
+                      strokeWidth={2}
+                      unit="min"
+                      radius={[10, 10, 0, 0]}
+                    />
+                    <Tooltip 
+                      offset={10}
+                      contentStyle={{
+                        backgroundColor: '#fff',
+                        border: 'none',
+                        textAlign: 'center',
+                      }}
+                      wrapperStyle={{
+                        outline: 'none',
+                      }}
+                      itemStyle={{
+                        fontSize: '12px',
+                        fontWeight: '500',
+                        color: '#000',
+                        lineHeight: '0',
+                      }}
+                      labelFormatter={() => ''}
+                      separator=""
+                      formatter={(value) => ['', value]}
+                    />
                     <Area
                       type="monotone"
                       dataKey="sessionLength"
                       stroke="#FFF"
                       fill="#fff"
-                      tickLine="#FFF"
+                      tickLine="#fbfbfb"
                     />
             </LineChart >
           </ResponsiveContainer>
