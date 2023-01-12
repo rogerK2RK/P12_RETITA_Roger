@@ -66,8 +66,8 @@ const Background = styled.div`
 			<h3>Activité quotidienne</h3>
 			<ResponsiveContainer width="100%" height={272}>
         <BarChart
-          width={1035}
-          height={320}
+          // width={1035}
+          // height={320}
           data={props.data}
           margin={{
             top: 24,
@@ -80,24 +80,33 @@ const Background = styled.div`
         >
           <CartesianGrid vertical={0} strokeDasharray="3 3" />
           {/* <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} tickLine={{ stroke: 'none' }}/> */}
-          <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} type="category"  tickLine={false} />
+          <XAxis 
+            label={{fill:'#9B9EAC' }} 
+            tick={{ fill: '#9B9EAC' }} 
+            type="category"  
+            tickLine={false} 
+            tickMargin={16}
+            tickSize={0}
+          />
           <YAxis
               dataKey="kilogram"
               tickLine={false}
+              tickMargin={40}
+              tickSize={0}
+              axisLine={false}
               tickCount={3}
               orientation="right"
               yAxisId="right"
-              domain={['dataMin - 2', 'dataMax + 5']}
+              domain={['dataMin - 2', 'dataMax + 1']}
               // tick={{ stroke: 'none' }}
             />
             <YAxis
               dataKey="calories"
               tickLine={false}
-              tickCount={3}
-              orientation="left"
-              yAxisId="left"
-              domain={['dataMin - 100', 'dataMax + 20']}
+              yAxisId="calories"
               hide
+              orientation="right"
+              domain={['dataMin - 100', 'dataMax + 10']}
             />
             <Tooltip
                 cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
@@ -139,8 +148,8 @@ const Background = styled.div`
             width="7px" 
             yAxisId="right" 
             dataKey="kilogram" 
-            fill="#000"
-            // fill="#282D30" 
+            // fill="#000"
+            fill="#282D30" 
             radius={[3, 3, 0, 0]} 
           />
           <Bar 
