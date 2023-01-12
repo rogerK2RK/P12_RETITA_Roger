@@ -92,9 +92,9 @@ function formatXAxis(value){
 
 function CustomizedDot(props){
   return <svg>
-          <circle cx={props.cx} cy={props.cy} r={3} fill="white" opacity={1} />
-          <circle cx={props.cx} cy={props.cy} r={6} fill="white" opacity={0.3} />
-          <rect x={props.cx} y={0} width="100%" height="100%" tickLine={0} opacity={0.1}/>
+          <circle cx={props.cx} cy={props.cy} r={4} fill="white" opacity={1} />
+          <circle cx={props.cx} cy={props.cy} r={8} fill="white" opacity={0.3} />
+          <rect x={props.cx} y={0} width="100%" fill="#000000"  height="100%" tickLine={0} opacity={0.1}/>
         </svg>
 } 
 
