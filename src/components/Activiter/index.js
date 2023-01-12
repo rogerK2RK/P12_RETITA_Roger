@@ -45,7 +45,7 @@ const Background = styled.div`
     position: absolute;
     height: 50px;
     right: 10px;
-    top: -37px;
+    top: -8px !important;
   }
   .recharts-legend-wrapper ul {
     display: flex;
@@ -70,17 +70,17 @@ const Background = styled.div`
           // height={320}
           data={props.data}
           margin={{
-            top: 24,
+            top: 15,
             right: 10,
             left: 0,
             bottom: 5
           }}
           className={styles["bkgrd"]}
-          barGap={8}
+          // barGap={8}
         >
           <CartesianGrid vertical={0} strokeDasharray="3 3" />
           {/* <XAxis label={{fill:'#9B9EAC' }} tick={{ fill: '#9B9EAC' }} tickLine={{ stroke: 'none' }}/> */}
-          <XAxis 
+           <XAxis 
             label={{fill:'#9B9EAC' }} 
             tick={{ fill: '#9B9EAC' }} 
             type="category"  
@@ -88,7 +88,7 @@ const Background = styled.div`
             tickMargin={16}
             tickSize={0}
           />
-          <YAxis
+          {/* <YAxis
               dataKey="kilogram"
               tickLine={false}
               tickMargin={40}
@@ -98,16 +98,18 @@ const Background = styled.div`
               orientation="right"
               yAxisId="right"
               domain={['dataMin - 2', 'dataMax + 1']}
-              // tick={{ stroke: 'none' }}
-            />
-            <YAxis
+            /> */}
+            {/* <YAxis
               dataKey="calories"
               tickLine={false}
+              tickSize={0}
+              axisLine={false}
+              tickCount={3}
               yAxisId="calories"
-              hide
-              orientation="right"
-              domain={['dataMin - 100', 'dataMax + 10']}
-            />
+              // hide
+              orientation="left"
+              domain={['dataMin - 10', 'dataMax + 100']}
+            />  */}
             <Tooltip
                 cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
                 offset={20}
