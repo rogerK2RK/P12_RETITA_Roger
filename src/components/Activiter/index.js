@@ -19,6 +19,7 @@ const Background = styled.div`
   border-radius: 5px;
   height: 320px;
   width: 100%;
+  margin-bottom: 30px;
   max-width: 835px;
   position: relative;
   grid-area: activity;
@@ -39,6 +40,12 @@ const Background = styled.div`
   text {
     font-weight: 500;
     fill: #9b9eac;
+  }
+  .recharts-legend-wrapper{
+    position: absolute;
+    height: 50px;
+    right: 10px;
+    top: -37px;
   }
   .recharts-legend-wrapper ul {
     display: flex;
