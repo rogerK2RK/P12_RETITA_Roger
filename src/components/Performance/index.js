@@ -30,11 +30,14 @@ export default function Performance(props) {
     speed: "Vitesse",
     intensity: "Intensité",
   };
+  const formatKind = (id) => kindTitle[kinds[id]];
 
   return (
-    <ResponsiveContainer width={270}height={263} className={styles["radar-performance"]}>
-      {/* <h3>Salut</h3> */}
-      <RadarChart
+      <ResponsiveContainer 
+        width={270}height={263} 
+        className={styles["radar-performance"]}
+      >
+        <RadarChart
           startAngle={-150}
           endAngle={210}
           margin={{ top: 5, right: 35, bottom: 5, left: 35 }}
@@ -45,19 +48,25 @@ export default function Performance(props) {
           height={263}
           data={data02}
           className={styles["bkgrd"]}
-      >
-        <PolarGrid polarRadius={[10, 20, 40, 60, 80]} radialLines={false} />
-        <PolarAngleAxis orient="inner" dataKey="categorie" tickLine={false} />
-        <PolarRadiusAxis hide tick={{ fill: 'none' }} stroke="none" tickCount={5} tickLine={{ stroke: 'none' }} axisLine={false} />
-        <Radar
-          name="Mike"
-          dataKey="value"
-          stroke="#FF0000"
-          fill="#FF0000"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
-    </ResponsiveContainer>
-    
+        >
+          <PolarGrid 
+            polarRadius={[10, 20, 40, 60, 80]} 
+            radialLines={false} /** enlève les rayons du graph **/
+          />
+          <PolarAngleAxis 
+            dataKey="kind"
+            tickFormatter={formatKind}
+            orient="inner" 
+            tickLine={false} 
+            tick={{ fill: "#FFF", /*fontFamily: "Roboto",*/ fontSize: "14px" }}
+          />
+          <Radar
+            dataKey="value"
+            stroke="#E6000"
+            fill="#E60000"
+            fillOpacity={0.7}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
   );
 }
