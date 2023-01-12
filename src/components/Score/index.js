@@ -1,8 +1,44 @@
 import styles from "./styles.module.css"
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { RadialBarChart , RadialBar, Legend } from "recharts";
+import styled from 'styled-components';
 
-
+const Background = styled.div`
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  height: 263px;
+  width: 100%;
+  max-width: 258px;
+  position: relative;
+  grid-area: score;
+  overflow: hidden;
+  z-index: 1;
+  h3 {
+    color: #20253a;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    position: absolute;
+    max-width: 150px;
+    left: 34px;
+    z-index:200;
+  }
+  .recharts-sector .recharts-radial-bar-sector{
+    background-color: #FFF !important;
+  }
+  svg {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 210px;
+    height: 210px;
+    // transform: rotate(-90deg) scale(0.73);
+    background-color: #fff;
+    border-radius: 50%;
+    // overflow: visible;
+    // margin-top: 2%;
+  }
+`;
 
 export default function App(props) {
   let score;
@@ -13,34 +49,53 @@ export default function App(props) {
     score = props.data.score;
   }
 
-  const tem1 = [{
-    value:score*100
-  },{
-    value:100-(score*100)
+  function CustomLegendScore(payload) {
+    return (
+      <div className={styles['legendScore']}>
+        <p className={styles['legendScore__number']}>
+          {payload.payload[1].payload.value}%
+        </p>
+        <p className={styles['legendScore__text']}>de votre</p>
+        <p className={styles['legendScore__text']}>objectif</p>
+      </div>
+    )
+  }
+
+  let tem1 = [{
+    value: 100,
+    fill: '#FFFFFF'
+  },
+  {
+    value: score*100,
+    fill: '#E60000'
   }];
   
-  const COLORS = ["#E60000", "#fff",];
+  
   return (
-    <PieChart width={258} height={263} className={styles["bkgrnd"]}>
-      
-      <Pie
-        cornerRadius={20}
-        data={tem1}
-        dataKey="value"
-        cx={129}
-        cy={131}
-        startAngle={90}
-        endAngle={450}
-        innerRadius={70}
-        outerRadius={90}
-        fill="#82ca9d"
-        label
+    <Background>
+      <h3>Score</h3>
+      <RadialBarChart 
+        startAngle={90} 
+        endAngle={470} 
+        cx='50%' 
+        cy='50%' 
+        outerRadius={145}
+        innerRadius={100} 
+        data={tem1} 
+        width={258} 
+        height={263} 
+        className={styles["bkgrnd"]}
       >
-        {tem1.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-      ))}
-      </Pie>
-      
-    </PieChart>
+        
+        <RadialBar 
+          cornerRadius='100%' 
+          dataKey='value'
+        />
+        <Legend 
+          content={<CustomLegendScore />} 
+          verticalAlign='middle' 
+        />
+      </RadialBarChart >
+    </Background>
   );
 }
