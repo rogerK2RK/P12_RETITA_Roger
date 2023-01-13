@@ -1,5 +1,6 @@
 import styles from "./styles.module.css"
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import React from "react";
 import {
   BarChart,
@@ -99,17 +100,17 @@ const Background = styled.div`
               yAxisId="right"
               domain={['dataMin - 2', 'dataMax + 1']}
             /> */}
-            {/* <YAxis
+            <YAxis
               dataKey="calories"
               tickLine={false}
               tickSize={0}
               axisLine={false}
               tickCount={3}
-              yAxisId="calories"
+              yAxisId="right"
               // hide
-              orientation="left"
-              domain={['dataMin - 10', 'dataMax + 100']}
-            />  */}
+              orientation="right"
+              domain={[0, 'dataMax + 100']}
+            /> 
             <Tooltip
                 cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
                 offset={20}
@@ -168,5 +169,13 @@ const Background = styled.div`
   );
 }
 
+//PropTypes for ID
+Activiter.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    day:PropTypes.date,
+    kilogram:PropTypes.number,
+    calories:PropTypes.number
+  }))
+}
 
 export default Activiter;

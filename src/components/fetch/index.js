@@ -1,9 +1,15 @@
-
+/**
+ * 
+ * @param {string} url 
+ * @returns 
+ */
 function callApi(url){
    return fetch(url)
     .then((response) => response.json())
 
 }
+
+callApi()
 
 export function getAverageActiviter(userId){
     return callApi(`http://localhost:3000/user/${userId}/activity`).then((data)=>{

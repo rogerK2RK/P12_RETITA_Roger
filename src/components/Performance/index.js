@@ -1,4 +1,5 @@
 import styles from "./styles.module.css"
+import PropTypes from 'prop-types';
 import React from "react";
 import {
   Radar,
@@ -69,4 +70,8 @@ export default function Performance(props) {
         </RadarChart>
       </ResponsiveContainer>
   );
+}
+//PropTypes for ID
+Performance.propTypes = {
+  id: PropTypes.number
 }

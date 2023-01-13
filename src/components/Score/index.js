@@ -1,4 +1,5 @@
 import styles from "./styles.module.css"
+import PropTypes from 'prop-types';
 import React from "react";
 import { RadialBarChart , RadialBar, Legend } from "recharts";
 import styled from 'styled-components';
@@ -98,4 +99,9 @@ export default function App(props) {
       </RadialBarChart >
     </Background>
   );
+}
+
+//PropTypes for ID
+App.propTypes = {
+  id: PropTypes.number
 }
