@@ -15,7 +15,7 @@ import {
 export default function Performance(props) {
   let kinds = props.data.kind;
   let data01 = props.data.data;
-  console.log(kinds)
+  // console.log(kinds)
 
   const data02 = data01.map((obj) => {
     return {
