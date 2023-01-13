@@ -78,8 +78,14 @@
 }
 
 .seconde-box {
-  margin: 159px 90px 86px 224px; 
+  /* margin: 159px 90px 86px 224px;  */
+  margin: 8% 5% 4% 12%;
   background-color: #FFFFFF;
+}
+@media all and (max-width: 1024){
+  .recharts-responsive-container {
+    
+  }
 }
 
 .box-btm {

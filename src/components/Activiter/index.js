@@ -20,7 +20,7 @@ const Background = styled.div`
   height: 320px;
   width: 100%;
   margin-bottom: 30px;
-  max-width: 835px;
+  // max-width: 835px;
   position: relative;
   grid-area: activity;
   h3 {

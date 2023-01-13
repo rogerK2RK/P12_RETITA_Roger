@@ -103,10 +103,10 @@ export default function Session(props) {
   return (
     <Background>
       <h3>Durée moyenne des sessions</h3>
-          <ResponsiveContainer width={270}height={263}>
+          <ResponsiveContainer /*width={270} height={263}*/>
               <LineChart 
-                    width={258}
-                    height={253}
+                    /*width={258}
+                    height={253}*/
                     data={props.data}
                     className={styles["bkgrd-session"]}
                     isAnimationActive={true}

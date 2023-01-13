@@ -34,7 +34,7 @@ export default function Performance(props) {
 
   return (
       <ResponsiveContainer 
-        width={270}height={263} 
+        /*width={270}*/height={263} 
         className={styles["radar-performance"]}
       >
         <RadarChart
@@ -44,7 +44,7 @@ export default function Performance(props) {
           cx={129}
           cy={131}
           outerRadius={79}
-          width={258}
+          /*width={258}*/
           height={263}
           data={data02}
           className={styles["bkgrd"]}
