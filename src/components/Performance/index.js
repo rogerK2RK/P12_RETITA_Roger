@@ -46,7 +46,7 @@ export default function Performance(props) {
           cy={131}
           outerRadius={79}
           /*width={258}*/
-          height={263}
+          // height={263}
           data={data02}
           className={styles["bkgrd"]}
         >

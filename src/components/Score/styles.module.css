@@ -20,20 +20,22 @@
     margin: 5px;
 }
 
+
 @media (min-width: 1024px) and (max-width: 1342px){
     .box-score {
         width: 70% ! important;
         height: 200px ! important;
     }
-    .recharts-legend-wrapper {
-        left: -17px ! important;
-        top: 56.7px ! important;
+}
+@media (min-width: 1232px) and (max-width: 1340px){
+    .bkgrnd > div {
+        left: -18px ! important;
+        top: 53.7px ! important;
     }
 }
-
-@media (min-width: 1024px) and (max-width: 1030px){
-    .recharts-legend-wrapper {
-        left: -38px;
-        top: 51.7px;
+@media (min-width: 1024px) and (max-width: 1232px){
+    .bkgrnd > div {
+        left: -38px ! important;
+        top: 53.7px ! important;
     }
 }
