@@ -4,6 +4,7 @@ import Sessions from '../../components/Session/index.js';
 import Performance from '../../components/Performance/index.js';
 import Score from '../../components/Score/index.js';
 import Nutriment from '../../components/Nutriment/index.js';
+import {Model} from "../../components/fetch/model"
 
 import React, { useState, useEffect } from "react"
 import {getAverageActiviter as getAverageActiviterFetch, getAverageSessions as getAverageSessionsFetch, getAveragePerformance as getAveragePerformanceFetch, getAverageScore, getAverageNutriment as getAverageNutrimentFetch, getAverageName as getAverageNameFetch} from '../../components/fetch';
@@ -45,7 +46,7 @@ function User() {
     });
 
     const callScore = getAverageScore(userId).then((score) => {
-      setScore(score)
+      setScore(Model.formatAverageScore(score))
     });
 
     const callNutriment = getAverageNutriment(userId).then((nutriment) => {
@@ -74,7 +75,7 @@ function User() {
               <div className='box-btm'>
                 <Sessions data={sessions} />
                 <Performance data={performance}/>
-                <Score data={score}/>
+                <Score pourcentage={score.score * 100}/>
               </div>
             </div>
             <div className="box-rght">

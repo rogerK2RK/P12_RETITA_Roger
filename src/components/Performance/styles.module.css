@@ -3,10 +3,20 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;
     width: 100% ! important;
-    max-width: 258px ! important;
+    /* max-width: 258px ! important; */
 }
 
 .radar-performance {
     display: flex;
     justify-content: center;
+}
+@media (min-width: 1024px) and (max-width: 1342px){
+    .bkgrd {
+        width: 75% ! important;
+        height: 200px ! important;
+    }
+    .bkgrd > svg {
+        width: 100% ! important;
+        height: 100% ! important;
+    }
 }

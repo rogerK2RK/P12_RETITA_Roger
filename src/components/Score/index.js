@@ -39,16 +39,43 @@ const Background = styled.div`
     // overflow: visible;
     // margin-top: 2%;
   }
+  @media (min-width: 1237px) and (max-width: 1342px){
+    svg {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 170px;
+      height: 170px;
+      // transform: rotate(-90deg) scale(0.73);
+      background-color: #fff;
+      border-radius: 50%;
+      // overflow: visible;
+      // margin-top: 2%;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1237px){
+    svg {
+      position: absolute;
+      top: 14%;
+      left: 7%;
+      width: 147px;
+      height: 147px;
+      // transform: rotate(-90deg) scale(0.73);
+      background-color: #fff;
+      border-radius: 50%;
+      // overflow: visible;
+      // margin-top: 2%;
+    }
+  }
 `;
 
 export default function App(props) {
-  let score;
 
-  if(props.data.id === 12){
-    score = props.data.todayScore;
-  } else if(props.data.id === 18){
-    score = props.data.score;
-  }
+  // if(props.data.id === 12){
+  //   score = props.data.todayScore;
+  // } else if(props.data.id === 18){
+  //   score = props.data.score;
+  // }
 
   function CustomLegendScore(payload) {
     return (
@@ -67,13 +94,13 @@ export default function App(props) {
     fill: '#FFFFFF'
   },
   {
-    value: score*100,
+    value: props.pourcentage,
     fill: '#E60000'
   }];
   
   
   return (
-    <Background>
+    <Background className={styles["box-score"]}>
       <h3>Score</h3>
       <RadialBarChart 
         startAngle={90} 
@@ -103,5 +130,5 @@ export default function App(props) {
 
 //PropTypes for ID
 App.propTypes = {
-  id: PropTypes.number
+  pourcentage: PropTypes.number
 }

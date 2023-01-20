@@ -1,6 +1,13 @@
 .bkgrd-session {
-    background: #FF0000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-    border-radius: 5px;
-    width: 100% ! important;
+  background: #FF0000;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  width: 100% ! important;
+}
+
+@media (min-width: 1024px) and (max-width: 1342px){
+  .boxe-session {
+    width: 70% ! important;
+    height: 200px ! important;
   }
+}

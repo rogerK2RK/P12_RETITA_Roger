@@ -101,7 +101,7 @@ function CustomizedDot(props){
 export default function Session(props) {
 
   return (
-    <Background>
+    <Background className={styles["boxe-session"]}>
       <h3>Durée moyenne des sessions</h3>
           <ResponsiveContainer /*width={270} height={263}*/>
               <LineChart 
