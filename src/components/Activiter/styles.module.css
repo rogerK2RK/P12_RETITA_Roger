@@ -5,3 +5,9 @@
     /* margin-top: 30px; */
     width: 100% !important;
 }
+
+@media all and (max-width: 1029){
+    .bx-grz {
+        width: 95% ! important;
+    }
+}

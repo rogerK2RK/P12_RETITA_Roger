@@ -16,10 +16,10 @@ import {
 
 const Background = styled.div`
   background-color: #fbfbfb;
-  padding: 24px;
+  padding: 24px 0px 0px 24px;
   border-radius: 5px;
   height: 320px;
-  width: 100%;
+  width: 98%;
   margin-bottom: 30px;
   // max-width: 835px;
   position: relative;
@@ -68,7 +68,7 @@ const Background = styled.div`
 
  function Activiter(props) {
   return (
-    <Background>
+    <Background className={styles["bx-grz"]}>
 			<h3>Activité quotidienne</h3>
 			<ResponsiveContainer width="100%" height={272}>
         <BarChart

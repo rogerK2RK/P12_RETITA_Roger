@@ -76,15 +76,17 @@
   top: 91px; */
   /* background-color: aqua; */
 }
-
-.seconde-box {
-  /* margin: 159px 90px 86px 224px;  */
-  margin: 8% 5% 4% 12%;
-  background-color: #FFFFFF;
-}
-@media all and (max-width: 1024){
-  .recharts-responsive-container {
-    
+/* @media all and (min-width: 1030){ */
+  .seconde-box {
+    /* margin: 159px 90px 86px 224px;  */
+    margin: 8% 5% 4% 12%;
+    background-color: #FFFFFF;
+  }
+/* } */
+@media all and (max-width: 1029){
+  .seconde-box {
+    margin: 8% 2% 4% 12%;
+    background-color: #FFFFFF;
   }
 }
 
