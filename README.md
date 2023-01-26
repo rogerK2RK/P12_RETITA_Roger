@@ -1,80 +1,36 @@
-# Getting Started with Create React App
+# Project 12 - SportSee React Analytics Dashboard
 
 This repo contains all the source code to run the sports analytics dashboard SportSee.
 
 ## 1. General information
 
-### Getting Started with Create React App
+This project runs in 2 parts :
 
-This project was bootstrapped with [Create React App]
+- The backend
+- The frontend
 
-### developped with
+## 2. Installing the Backend
 
-- React 18.2.0
-- Recharts 2.1.15
+Install API
+For use Api, clone the back-end repository and follow the instruction on the README :
 
-## 2. Project
+- https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
 
-### 2.1 Prerequisites
+## 3. Installing the FrontEnd
+
+### 3.1 Prerequisites
 
 for a better compability please use:
 
 - [NodeJS (**version >= 16.17.0)]
+- React 18.2.0
+- Recharts 2.1.15
+ 
 
-If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
+### 3.2 Launching the project
 
- Install API
-By default data are mocked-data, For use Api with data user, clone the back-end repository and follow the instruction on it:
-
-git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
-
-and run the api with :
-> `npm start`
-
-### 2.2 Launching the project
-
-- Fork the repository
-- Clone it on your computer.
+- Clone this repository on your computer.
 - `npm install` command will allow you to install the dependencies.
-- doanl
+- `npm start` command will allow you to run the React app.
 
-## 3. Available Scripts
-
-In the project directory, you can run:
-
-> `npm start`
-
-Runs the app in the development mode.
-Open http://localhost:3001 to view it in your browser.
-
-
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note: The backend will run on port 3000. To allow for both the backend and the frontend to run concurrently, run the FrontEnd on port 3001.
