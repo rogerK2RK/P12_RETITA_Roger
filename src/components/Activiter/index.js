@@ -60,6 +60,11 @@ const Background = styled.div`
   }
 `;
 
+/**
+ * 
+ * @param {Objet} props 
+ * @returns {JSX}
+ */
 
  function Activiter(props) {
   return (
@@ -67,8 +72,6 @@ const Background = styled.div`
 			<h3>Activité quotidienne</h3>
 			<ResponsiveContainer width="100%" height={272}>
         <BarChart
-          // width={1035}
-          // height={320}
           data={props.data}
           margin={{
             top: 15,

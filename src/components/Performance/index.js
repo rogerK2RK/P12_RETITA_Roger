@@ -11,7 +11,12 @@ import {
 } from "recharts";
 
 
-
+/**
+ * Show user performance with radar chart
+ * @param { Object } params
+ * @param { Object } params.data
+ * @returns {JSX}
+ */
 export default function Performance(props) {
   let kinds = props.data.kind;
   let data01 = props.data.data;
@@ -73,5 +78,12 @@ export default function Performance(props) {
 }
 //PropTypes for ID
 Performance.propTypes = {
-  id: PropTypes.number
+  data: PropTypes.arrayOf(PropTypes.shape({
+    cardio:PropTypes.number,
+    energy:PropTypes.number,
+    endurance:PropTypes.number,
+    strength:PropTypes.number,
+    speed:PropTypes.number,
+    intensity:PropTypes.number
+  }))
 }

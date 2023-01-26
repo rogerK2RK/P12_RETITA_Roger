@@ -5,6 +5,12 @@ import Proteines from '../../assets/icons/protein-icon.png';
 import Glucides from '../../assets/icons/carbs-icon.png';
 import Lipides from '../../assets/icons/fat-icon.png';
 
+
+/**
+ * 
+ * @param {Objet} props 
+ * @returns 
+ */
 function Nutriment(props){
     return(
         <div className={styles["box-global"]}>
@@ -37,3 +43,12 @@ function Nutriment(props){
 }
 
 export default Nutriment;
+
+Nutriment.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        calorieCount:PropTypes.number,
+        proteinCount:PropTypes.number,
+        carbohydrateCount:PropTypes.number,
+        lipidCount:PropTypes.number
+    }))
+  }

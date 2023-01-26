@@ -90,6 +90,12 @@ function formatXAxis(value){
   }
 }
 
+
+/**
+ * 
+ * @param {Objet} props 
+ * @returns 
+ */
 function CustomizedDot(props){
   return <svg>
           <circle cx={props.cx} cy={props.cy} r={4} fill="white" opacity={1} />
@@ -98,6 +104,12 @@ function CustomizedDot(props){
         </svg>
 } 
 
+/**
+ * Show user time session with line chart
+ * @param { Object } params
+ * @param { Array } params.data
+ * @returns {JSX}
+ */
 export default function Session(props) {
 
   return (

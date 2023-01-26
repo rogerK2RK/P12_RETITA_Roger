@@ -23,17 +23,30 @@ for a better compability please use:
 
 If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
 
+ Install API
+By default data are mocked-data, For use Api with data user, clone the back-end repository and follow the instruction on it:
+
+git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
+
+and run the api with :
+> `npm start`
+
 ### 2.2 Launching the project
 
 - Fork the repository
 - Clone it on your computer.
 - `npm install` command will allow you to install the dependencies.
+- doanl
 
 ## 3. Available Scripts
 
 In the project directory, you can run:
 
 > `npm start`
+
+Runs the app in the development mode.
+Open http://localhost:3001 to view it in your browser.
+
 
 
 ## Learn More

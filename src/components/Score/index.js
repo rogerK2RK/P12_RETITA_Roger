@@ -69,6 +69,11 @@ const Background = styled.div`
   }
 `;
 
+/**
+ * 
+ * @param {Objet} props 
+ * @returns 
+ */
 export default function App(props) {
 
   // if(props.data.id === 12){
@@ -77,6 +82,11 @@ export default function App(props) {
   //   score = props.data.score;
   // }
 
+  /**
+   * 
+   * @param {Number} payload 
+   * @returns 
+   */
   function CustomLegendScore(payload) {
     return (
       <div className={styles['legendScore']}>
