@@ -19,7 +19,7 @@ This project was bootstrapped with [Create React App]
 
 for a better compability please use:
 
-- [NodeJS (**version >= 16**)]
+- [NodeJS (**version >= 16.17.0)]
 
 If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
 
