@@ -76,14 +76,3 @@ export default function Performance(props) {
       </ResponsiveContainer>
   );
 }
-//PropTypes for ID
-Performance.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    cardio:PropTypes.number,
-    energy:PropTypes.number,
-    endurance:PropTypes.number,
-    strength:PropTypes.number,
-    speed:PropTypes.number,
-    intensity:PropTypes.number
-  }))
-}

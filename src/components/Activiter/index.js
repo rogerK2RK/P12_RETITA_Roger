@@ -172,13 +172,5 @@ const Background = styled.div`
   );
 }
 
-//PropTypes for ID
-Activiter.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    day:PropTypes.date,
-    kilogram:PropTypes.number,
-    calories:PropTypes.number
-  }))
-}
 
 export default Activiter;

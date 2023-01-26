@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 /**
  * 
- * @param {Objet} props 
+ * @param {Array} props 
  * @returns 
  */
 function Nutriment(props){
@@ -46,11 +46,11 @@ function Nutriment(props){
 
 export default Nutriment;
 
-Nutriment.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape({
-        calorieCount:PropTypes.number,
-        proteinCount:PropTypes.number,
-        carbohydrateCount:PropTypes.number,
-        lipidCount:PropTypes.number
-    }))
-  }
+// Nutriment.propTypes = {
+//     data: PropTypes.arrayOf(PropTypes.shape({
+//         calorieCount:PropTypes.number,
+//         proteinCount:PropTypes.number,
+//         carbohydrateCount:PropTypes.number,
+//         lipidCount:PropTypes.number
+//     }))
+//   }

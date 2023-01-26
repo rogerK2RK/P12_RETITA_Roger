@@ -11,6 +11,11 @@ function callApi(url){
 
 callApi()
 
+/**
+ * 
+ * @param {Number} userId 
+ * @returns 
+ */
 export function getAverageActiviter(userId){
     return callApi(`http://localhost:3000/user/${userId}/activity`).then((data)=>{
         return data.data.sessions;
