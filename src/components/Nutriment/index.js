@@ -4,6 +4,8 @@ import Calories from '../../assets/icons/calories-icon.png';
 import Proteines from '../../assets/icons/protein-icon.png';
 import Glucides from '../../assets/icons/carbs-icon.png';
 import Lipides from '../../assets/icons/fat-icon.png';
+import PropTypes from 'prop-types';
+
 
 
 /**

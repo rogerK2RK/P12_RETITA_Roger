@@ -71,7 +71,7 @@ const Background = styled.div`
 
 /**
  * 
- * @param {Objet} props 
+ * @param {Number} props 
  * @returns 
  */
 export default function App(props) {
