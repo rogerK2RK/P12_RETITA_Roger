@@ -12,33 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { useState, useEffect } from "react"
 import {getAverageSessions, getAverageUsers} from './components/fetch';
 
-// const dataSession = [
-//   {
-//     "day":1,
-//     "sessionLength":30
-//   },
-//   {
-//     "day":2,
-//     "sessionLength":40
-//   },
-//   {
-//     "day":3,
-//     "sessionLength":50},
-//   {
-//     "day":4,
-//     "sessionLength":30},
-//   {
-//     "day":5,
-//     "sessionLength":30},
-//   {
-//     "day":6,
-//     "sessionLength":50
-//   },
-//   {
-//     "day":7,
-//     "sessionLength":50
-//   }
-// ];
+
 
 function App() {
   const [users, setUsers] = useState([])
