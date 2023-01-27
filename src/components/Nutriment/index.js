@@ -10,8 +10,8 @@ import PropTypes from 'prop-types';
 
 /**
  * 
- * @param {Object} props 
- * @returns 
+ * @param {{"calorieCount": number,"proteinCount": number,"carbohydrateCount": number,"lipidCount": number}} props 
+ * @returns {JSX}
  */
 function Nutriment(props){
     return(

@@ -13,8 +13,20 @@ import {
 
 /**
  * 
- * @param {Object} props 
- * @returns 
+ * @param {data: {
+ * "userId": number,
+ * "kind":
+ *  {"1": string,
+  * "2": string,
+  * "3": string,
+  * "4": string,
+  * "5": string,
+  * "6": string},
+ * "data":[
+ *  {"value": number,
+ * "kind": number
+ * }]}} props
+ * @returns {JSX}
  */
 export default function Performance(props) {
   let kinds = props.data.kind;

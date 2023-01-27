@@ -1,7 +1,7 @@
 /**
  * 
  * @param {string} url 
- * @returns {Object}
+ * @returns {Promise}
  */
 function callApi(url){
    return fetch(url)
@@ -15,7 +15,7 @@ callApi()
  * 
  * this function makes the call api by taking the user id as parameters for the activity graphe
  * @param {Number} userId 
- * @returns {Array} return a array which contains objects
+ * @returns {Promise<>} return a promise 
  */
 export function getAverageActiviter(userId){
     return callApi(`http://localhost:3000/user/${userId}/activity`).then((data)=>{
@@ -27,7 +27,7 @@ export function getAverageActiviter(userId){
  * 
  * this function makes the call api by taking the user id as parameters for the Sessions graphe
  * @param {Number} userId 
- * @returns {Array} return a array which contains objects
+ * @returns {Promise<Array<{"day":number,"sessionLength":number}>>} return a array which contains objects
  */
 export function getAverageSessions(userId){
     return callApi(`http://localhost:3000/user/${userId}/average-sessions`).then((data)=>{
@@ -38,7 +38,7 @@ export function getAverageSessions(userId){
  * 
  * this function makes the call api by taking the user id as parameters for the Performance graphe
  * @param {Number} userId 
- * @returns {object} return an object which contains two objects
+ * @returns {Promise<{"userId":number,"kind":{"1": string,"2":string,"3":string,"4":string,"5":string,"6":string},"data":[{"value":number,"kind":number},{"value":number,"kind":number},{"value":number,"kind":number},{"value":number,"kind":number},{"value":number,"kind":number},{"value":number,"kind":number}]}>} return an object which contains two objects
  */
 export function getAveragePerformance(userId){
     return callApi(`http://localhost:3000/user/${userId}/performance`).then((data)=>{
@@ -49,8 +49,8 @@ export function getAveragePerformance(userId){
 /**
  * 
  * this function makes the call api by taking the user id as parameters for the Score graphe
- * @param {Number} userId 
- * @returns 
+  * @param {Number} userId 
+ * @returns {Promise<>} return a promise 
  */
 export function getAverageScore(userId){
     return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
@@ -61,8 +61,8 @@ export function getAverageScore(userId){
 /**
  * 
  * this function makes the call api by taking the user id as parameters for the Nutriment graphe
- * @param {Number} userId 
- * @returns {object} return an object of nutriments the user
+  * @param {Number} userId 
+ * @returns {Promise<>} return a promise 
  */
 export function getAverageNutriment(userId){
     return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
@@ -74,7 +74,7 @@ export function getAverageNutriment(userId){
  * 
  * this function makes the call api by taking the user id as parameters for the Name graphe
  * @param {Number} userId 
- * @returns {string} return the name of the user
+ * @returns {Promise<>} return a promise 
  */
 export function getAverageName(userId){
     return callApi(`http://localhost:3000/user/${userId}`).then((data)=>{
@@ -86,7 +86,7 @@ export function getAverageName(userId){
  * 
  * this function makes the call api by taking the user id as parameters for the Users graphe
  * @param {Number} userId 
- * @returns {string}
+ * @returns {Promise<>} return a promise 
  */
 export function getAverageUsers(){
     return callApi('http://localhost:3000/user').then((data)=>{

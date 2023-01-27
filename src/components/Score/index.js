@@ -72,7 +72,7 @@ const Background = styled.div`
 /**
  * 
  * @param {Number} props 
- * @returns 
+ * @returns {JSX}
  */
 export default function App(props) {
 
