@@ -108,6 +108,7 @@ function CustomizedDot(props){
  * Show user time session with line chart
  * @param { Object } params
  * @param { Array } params.data
+ * @param {Array} props
  * @returns {JSX}
  */
 export default function Session(props) {

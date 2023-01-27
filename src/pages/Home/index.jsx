@@ -3,6 +3,10 @@ import styles from "./styles.module.css"
 import { Link } from "react-router-dom"
 import User from '../../assets/icons/user.svg';
 
+/**
+ * return box of all the users
+ * @returns 
+ */
 function Home() {
   return (
     <div className={styles["Users-box"]}>

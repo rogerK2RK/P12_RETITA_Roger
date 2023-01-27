@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 /**
  * 
- * @param {Array} props 
+ * @param {Object} props 
  * @returns 
  */
 function Nutriment(props){

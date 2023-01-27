@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./styles.module.css"
 import { Link } from "react-router-dom";
 
+/**
+ * display the error page
+ * @returns 
+ */
 function ErrorPage() {
     return(
         <div className={styles["error-content"]}>

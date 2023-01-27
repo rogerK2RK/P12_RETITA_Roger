@@ -19,6 +19,11 @@ const getAveragePerformance = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true"
 const getAverageSessions = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageSessionsMock : getAverageSessionsFetch;
 const getAverageActiviter = process.env["REACT_APP_IS_MOCK_ACTIVE"] === "true" ? getAverageActiviterMock : getAverageActiviterFetch;
 
+/**
+ * Call the function for call the api for each graph
+ * and give the data which matches for each graph 
+ * @returns 
+ */
 function User() {
   const [isLoading, setIsLoading] = useState(false);
   const [activiter, setActiviter] = useState([]);

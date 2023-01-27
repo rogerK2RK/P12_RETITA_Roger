@@ -13,7 +13,10 @@ import React, { useState, useEffect } from "react"
 import {getAverageSessions, getAverageUsers} from './components/fetch';
 
 
-
+/**
+ * show the menu and declared all of  routes
+ * @returns 
+ */
 function App() {
   const [users, setUsers] = useState([])
 

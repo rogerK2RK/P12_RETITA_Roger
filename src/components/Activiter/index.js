@@ -62,10 +62,10 @@ const Background = styled.div`
 
 /**
  * 
+ * function to build the activity graph
  * @param {Objet} props 
- * @returns {JSX}
+ * @returns rerurn a graphe of user activities
  */
-
  function Activiter(props) {
   return (
     <Background className={styles["bx-grz"]}>

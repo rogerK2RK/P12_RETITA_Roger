@@ -12,10 +12,9 @@ import {
 
 
 /**
- * Show user performance with radar chart
- * @param { Object } params
- * @param { Object } params.data
- * @returns {JSX}
+ * 
+ * @param {Object} props 
+ * @returns 
  */
 export default function Performance(props) {
   let kinds = props.data.kind;
